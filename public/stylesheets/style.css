@@ -11,6 +11,9 @@ h1{
   text-align: center;
 }
 .button.primary:hover {
-  background:  rgb(28, 148, 148) ;
+  background: #74942c;
+}
+
+.button.primary{
   text-align: center;
 }
