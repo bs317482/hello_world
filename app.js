@@ -1,46 +1,98 @@
 require('dotenv').config();
 
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI); 
+// var createError = require('http-errors');
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var logger = require('morgan');
+// var mongoose = require('mongoose');
+// mongoose.connect(process.env.MONGODB_URI); 
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
 
-var app = express();
+// var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'hbs');
+
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
+
+// // error handler
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
+
+// module.exports = app;
+
+
+const express = require('express')
+const hbs = require('hbs')
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
+const app = express()
+
 app.set('view engine', 'hbs');
+app.use(express.static(`${__dirname}/public`))
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`)
+})
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+if (process.env.MONGODB_URI) {
+    mongoose.connect(process.env.MONGODB_URI);
+} else {
+    mongoose.connect("mongodb://localhost/hello_world")
+}
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+mongoose.connection.once('open', () => {
+    console.log(`Mongoose has connected to MongoDB`)
+})
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+mongoose.connection.on('error', (error) => {
+    console.error(`
+    MongoDB connection error!!! 
+    ${error}
+  `)
+    process.exit(-1)
+})
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+app.get("/", (req, res) => {
+    console.log("Hitting Index Route")
+    res.redirect("/users")
+})
 
-module.exports = app;
+const User = require("./models/User")
+app.get("/users", (req, res) => {
+    console.log("Hitting Users Route")
+    User.find({})
+        .then((users) => {
+            console.log("USERS", users)
+            res.render("users/index", {
+                users
+            })
+        })
+})
