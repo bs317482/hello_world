@@ -5,14 +5,11 @@ var User = mongoose.model('User',Schema.UserSchema)
 
 
 const UserSchema = new Schema({
-    fullName: String,
+    Name: String,
     food: String,
     gym: String,
-    weight: String,
-    email: String,
+    weight: Number,
     })
   
-
-
 
 module.exports = User
