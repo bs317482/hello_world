@@ -8,7 +8,7 @@ nothing
 - What part of your project was the hardest for you?(getting the users from the db to appear)
 - What would you like to see in the next version of your app?(a completed version)
 - Which classmates helped you the most?
-Geo,Tyler,Jackson and Bennet
+Geo,Jackson and Bennet
 
 #Heroku
 
