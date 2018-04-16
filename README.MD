@@ -2,19 +2,19 @@
 Here i have atemoted to build a fitness website that 
 
 - What technologies did you use?
- and bootstrap
+ bootstrap
 - What was your greatest accomplishment?
-everything(making colors switch between even and odd clicks)
-- What part of your project was the hardest for you?(creating the win soution)
-- What would you like to see in the next version of your app?(a win solution)
+nothing
+- What part of your project was the hardest for you?(getting the users from the db to appear)
+- What would you like to see in the next version of your app?(a completed version)
 - Which classmates helped you the most?
-Spence, Geo, Briana, Tyler and Me
+Geo,Tyler,Jackson and Bennet
 
-# bit ballon link
-
+#Heroku
+https://sheltered-mountain-36131.herokuapp.com/
 
 # Trello link
-
-
+https://trello.com/b/HgcZRoyB/full-stack
 
 # WireFrame
+

@@ -6,11 +6,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+const methodOverride = require('method-override');
+
+
 mongoose.connect(process.env.MONGODB_URI); 
-
-
-
-var users = require('./routes/users')
 
 
 var indexRouter = require('./routes/index');
@@ -47,29 +46,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+const db = mongoose.connection
+db.on('open',() => {
+  console.log('successfully connected to the db')
+})
+db.on('error',(error)=> {
+  console.log(error)
+})
+
 module.exports = app;
-
-
-// // log
-// // app.use(logger('dev'));
-// // app.use(bodyParser.urlencoded({
-// //   extended: true
-// // }))
-// // app.use(methodOverride('_method'));
-
-
-// /*Views*/
-// // app.set('view engine', 'hbs');
-
-// /* HOME */
-// app.get('/', function (req, res) {
-//   res.send('Welcome to NutritiousNard Health and Fitness');
-//  });
-
-// app.use('/users', userRoutes)
-
-
-// // Start server
-// app.listen(port, function () {
-//   console.info('Server Up -- Ready to serve cold todos on port', port, "//", new Date());
-// });

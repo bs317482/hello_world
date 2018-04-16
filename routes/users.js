@@ -19,10 +19,13 @@ const Gym = require('../models/Gym');
 const Food = require('../models/Food');
 
 router.get('/', function (req, res) {
+  User.find({})
+  .then((users) => {
+    res.render('index', {
+      users: users
+  });
+  })
   
-    res.render('views/index', {
-        users: username
-    });
 });
 
 router.get('/new', function (req, res) {
@@ -35,12 +38,14 @@ router.get('/all', function(req,res) {
 
 router.get('/:id', function (req, res) {
     let id = req.params.id
-    let todo = data.seededViews[id]
-    console.log(bluechips)
-
-    res.render('view/show', {
-        views: views
+    User.findById(id)
+    .then((user) => {
+      res.render('show', {
+        user: user
     })
+    })
+
+    
 })
 
 router.post('/', function (req, res) {

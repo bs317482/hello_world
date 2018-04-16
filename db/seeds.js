@@ -19,12 +19,24 @@ db.on('error', (error) => {
 
 const bleu = new User({
     name: 'bleu',
-    food: 'apples',
-    gym: 'Crunch Fitness',
+})
+
+const apple = new Food({
+    name: 'Apple',
+    calories: 75,
+})
+
+const gym1 = new Gym({
+    name: 'Crunch Fitness',
+    city: 'Atlanta',
+    Hours: 247,
 })
         
-User.remove().then(() => {
-    return User.insertMany([bleu])
+User.remove()
+.then(() => {
+    bleu.food.push(apple)
+    bleu.gym.push(gym1)
+    return User.insertMany(bleu)
 }).then((users) => {
     console.log(users)
     console.log('Saved User')

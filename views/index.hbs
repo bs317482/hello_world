@@ -33,14 +33,12 @@
 
 <h1>NutritiousNard</h1>
 <ul>
-  {{#each todos}}
-    <li>Name: {{description}}</li>
-    <li>Age: {{urgent}}</li>
-     <li>Gym: {{description}}</li>
-    <li>Food: {{urgent}}</li>
+  {{#each users}}
+    <a href="/users/{{this._id}}"><li>Name: {{this.name}}</li></a>
+    
     <br>
-    <div><a href="/todos/{{@index}}/edit">Edit</a></div>
-    <form action="/todos/{{@index}}">
+    <div><a href="/users/{{this._id}}/edit">Edit</a></div>
+    <form action="/users/{{this._id}}">
       <input type="submit" value="DELETE"/>
     </form>
     <hr>
