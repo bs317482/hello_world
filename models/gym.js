@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = require('../db/schema')
-var Gym = mongoose.model('Gym',Schema.GymSchema)
+var Gym = mongoose.model('Gym',Schema.gymSchema)
 
 
-    module.exports = User
+    module.exports = Gym

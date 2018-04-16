@@ -1,21 +1,21 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-var FoodSchema = new Schema({
+var foodSchema = new Schema({
     name: String,
     calories: Number,
 })
 
-    var GymSchema = new Schema({
+    var gymSchema = new Schema({
         name: String,
         city: String,
         Hours: Number,
         })
 
-const UserSchema = new Schema({
-    Name: String,
-    food: [FoodSchema],
-    gym: [GymSchema],
+const userSchema = new Schema({
+    name: String,
+    food: [foodSchema],
+    gym: [gymSchema],
     })
     
-    module.exports = {UserSchema, GymSchema, FoodSchema}
+    module.exports = {userSchema, gymSchema, foodSchema}

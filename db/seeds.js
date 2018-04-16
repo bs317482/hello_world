@@ -19,6 +19,8 @@ db.on('error', (error) => {
 
 const bleu = new User({
     name: 'bleu',
+    food: 'apples',
+    gym: 'Crunch Fitness',
 })
         
 User.remove().then(() => {

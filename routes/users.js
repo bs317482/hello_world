@@ -14,10 +14,14 @@ const router = express.Router()
 
 // var data = require('../data')
 
+const User = require('../models/User');
+const Gym = require('../models/Gym');
+const Food = require('../models/Food');
+
 router.get('/', function (req, res) {
   
     res.render('views/index', {
-        users: data.seededViews
+        users: username
     });
 });
 
