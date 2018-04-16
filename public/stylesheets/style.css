@@ -10,19 +10,37 @@ a {
 h1{
   text-align: center;
 }
-.button.primary:hover {
-  background: #74942c;
+
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: right;
+  width: 10%;
+  background: #f1f1f1;
 }
 
-.button.primary{
-  text-align: center;
+
+form.example button {
+  float: right;
+  width: 5%;
+  padding: 10px;
+  background: black;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
 }
 
-h2{
-  text-align: left;
-  font-size: 20px;
+form.example button:hover {
+  background: #0b7dda;
 }
-h3{
-  text-align: right;
-  font-size: 20px;
+
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
 }

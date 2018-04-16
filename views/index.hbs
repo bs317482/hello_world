@@ -1,8 +1,43 @@
-<h1> Todos </h1>
+{{!-- <h1> NutritiousNard </h1>
+<ul>
+  {{#each views}}
+    <li>Name: {{description}}</li>
+    <li>Age: {{urgent}}</li>
+     <li>Gym: {{description}}</li>
+    <li>Food: {{urgent}}</li>
+    <br>
+    <div><a href="/views/{{@index}}/edit">Edit</a></div>
+    <form action="/views/{{@index}}">
+      <input type="submit" value="DELETE"/>
+    </form>
+    <hr>
+  {{/each}}
+</ul> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>NutritiousNard</h1>
 <ul>
   {{#each todos}}
-    <li>Description: {{description}}</li>
-    <li>Urgent: {{urgent}}</li>
+    <li>Name: {{description}}</li>
+    <li>Age: {{urgent}}</li>
+     <li>Gym: {{description}}</li>
+    <li>Food: {{urgent}}</li>
     <br>
     <div><a href="/todos/{{@index}}/edit">Edit</a></div>
     <form action="/todos/{{@index}}">
@@ -13,32 +48,20 @@
 </ul>
 
 
+<button id="myButton" class="float-center submit-button" >SIGN UP NOW!</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "/new";
+    };
+</script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <h1>{{title}}</h1>
-<p>{{title}}</p>
-<h2>Jackson McGhehee</h2>
-<h3>Daniel Pino</h3>
-  <div class="button primary">
-    <a href="/user/new">
-    Sign Up Now!
-    </a> --}}
-  {{!-- </div> --}}
-   --}}
+  {{!-- <div class="button primary">
+    <a href="/new"></a>
+    Sign Up Now! --}}
+   
+   
   
   
   

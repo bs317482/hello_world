@@ -8,8 +8,7 @@ const UserSchema = new Schema({
     Name: String,
     food: String,
     gym: String,
-    weight: Number,
-    })
+    weight: Number
   
 
 module.exports = User

@@ -12,60 +12,66 @@
 var express = require('express')
 const router = express.Router()
 
-var data = require('../data')
+// var data = require('../data')
 
 router.get('/', function (req, res) {
   
-    res.render('todos/index', {
-        todos: data.seededTodos
+    res.render('views/index', {
+        users: data.seededViews
     });
 });
 
 router.get('/new', function (req, res) {
-    res.render('todos/new')
+    res.render('new')
+})
+
+router.get('/all', function(req,res) {
+  res.render('views/allinfo')
 })
 
 router.get('/:id', function (req, res) {
     let id = req.params.id
-    let todo = data.seededTodos[id]
-    console.log(todo)
+    let todo = data.seededViews[id]
+    console.log(bluechips)
 
-    res.render('todos/show', {
-        todo: todo
+    res.render('view/show', {
+        views: views
     })
 })
 
 router.post('/', function (req, res) {
-    data.seededTodos.push(req.body)
+    data.seededViews.push(req.body)
     res.redirect('/todos')
 })
 
 router.delete('/:id', function(req, res) {
-    data.seededTodos.splice(req.params.id, 1); // remove the item from the array
+    data.seededViews.splice(req.params.id, 1); 
 
-    res.redirect('/todos'); 
+    res.redirect('/views'); 
 });
 
 router.get('/:id/edit', function(req, res){
 const id =req.params.id
-const todos = data.seededTodos
+const todos = data.seededViews
 
-    res.render('todos/edit', {
-      todo: {
+    res.render('views/edit', {
+      views: {
         id: id,
-        description: todos[id].description,
-        urgent: todos[id].urgent,
+        description: views[id].description,
+        urgent: views[id].urgent,
       }
     });
   });
 
   router.put('/:id', function(req, res) {
-    var todoToEdit = data.seededTodos[req.params.id];
+    var viewsToEdit = data.seededViews[req.params.id];
   
-    todoToEdit.description = req.body.description;
-    todoToEdit.urgent = req.body.urgent;
+    viewsToEdit.description = req.body.description;
+    viewsToEdit.urgent = req.body.urgent;
   
-    res.redirect('/todos');
+    res.redirect('/views');
   })
+
+
 
 module.exports = router
