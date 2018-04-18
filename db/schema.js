@@ -18,4 +18,5 @@ const userSchema = new Schema({
     gym: [gymSchema],
     })
     
+
     module.exports = {userSchema, gymSchema, foodSchema}

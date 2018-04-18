@@ -1,8 +1,8 @@
 # Project 2
-Here i have atemoted to build a fitness website that 
+Here i have atemoted to build a fitness website that helps you keep track of your fitness lifstyle as well as show you other users fitness info.
 
 - What technologies did you use?
- bootstrap
+ no technologies were used
 - What was your greatest accomplishment?
 nothing
 - What part of your project was the hardest for you?(getting the users from the db to appear)

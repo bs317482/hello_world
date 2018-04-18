@@ -31,12 +31,53 @@ const gym1 = new Gym({
     city: 'Atlanta',
     Hours: 247,
 })
+
+
+const tony = new User({
+    name: 'Tony',
+})
+
+const grape = new Food({
+    name: 'Grape',
+    calories: 65,
+})
+
+const gym2 = new Gym({
+    name: 'Golds gym',
+    city: 'Atlanta',
+    Hours: 247,
+})
+
+
+const ashley = new User({
+    name: 'Ashley',
+})
+
+const orange = new Food({
+    name: 'Fruit:Orange',
+    calories: 55,
+})
+
+const gym3 = new Gym({
+    name: 'Gym:LA Fitness',
+    city: 'City:Atlanta',
+    Hours: 247,
+})
+
         
 User.remove()
 .then(() => {
     bleu.food.push(apple)
     bleu.gym.push(gym1)
-    return User.insertMany(bleu)
+    return bleu.save()
+}).then(() =>{
+    tony.food.push(grape)
+    tony.gym.push(gym2)
+    return tony.save()
+}).then(() =>{
+    ashley.food.push(orange)
+    ashley.gym.push(gym3)
+    return ashley.save()
 }).then((users) => {
     console.log(users)
     console.log('Saved User')
