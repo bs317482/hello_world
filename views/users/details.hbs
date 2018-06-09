@@ -1,0 +1,43 @@
+<h3>{{users.name}}</h3>
+<div class="user-profile">
+    <div class="col l6">
+        <div class="user-age">
+            <p> Age: </p>
+            <p>{{users.age}}</p>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="food-list col sm 12 m4 l6">
+        <h4>Favorite food</h4>
+        <div>
+            {{#each users.food}}
+
+    <a href="/users/{{../userId}}/food/{{this._id}}">{{this.name}}</a>
+  </div>
+  </div>
+ </div>
+  </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="user-buttons">
+    <button class="btn black-text">
+        <a href="/users/{{users._id}}/edit">
+            Edit User
+        </a>
+    </button>
+
+    <button class="btn white-text">
+        <a href="/users/{{users._id}}/food/new">
+            Add User
+        </a>
+    </button>
+
+    <form action="/users/{{users._id}}?_method=DELETE" method="POST">
+        <button class="btn red" type="submit">Delete</button>
+    </form>
+</div>

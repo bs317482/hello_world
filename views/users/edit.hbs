@@ -1,0 +1,20 @@
+<h4 class="user-name-edit">Edit {{users.name}}</h4>
+
+<form class="edit-user container" action="/users/{{users._id}}?_method=PUT" method="POST">
+    <div>
+        <label for="name">Your Name</label>
+        <input type="text" name="name" value="{{users.name}}">
+    </div>
+    <div>
+        <label for="age">Your Age</label>
+        <input type="text" name="age" value="{{users.age}}">
+    </div>
+    <div>
+        <label for="foods">food</label>
+        <input type="text" name="food" value="{{users.food}}">
+    </div>
+    <button class="btn white-text" type="submit">Update account</button>
+
+</form>
+
+</button>

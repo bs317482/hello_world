@@ -1,6 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = require('../db/schema')
+const Schema = require('../db/schema')
+const mongoose = require('mongoose')
 
-var User = mongoose.model('User', Schema.userSchema)
-
-module.exports = User;
+const userModel = mongoose.model('User', Schema.UserSchema)
+module.exports = userModel

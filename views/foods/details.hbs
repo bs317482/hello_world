@@ -1,0 +1,9 @@
+<h3>{{food.name}}</h3>
+<button class="btn">
+    <a href="/users/{{users._id}}">
+        User Profile
+    </a>
+</button>
+<form action="/users/{{users._id}}/foods/{{food._id}}?_method=DELETE" method="POST">
+    <button class="btn red" type="submit">Delete</button>
+</form>

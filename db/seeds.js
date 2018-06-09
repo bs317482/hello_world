@@ -21,15 +21,12 @@ const bleu = new User({
     name: 'bleu',
 })
 
-const apple = new Food({
+const apple = new Foods({
     name: 'Apple',
-    calories: 75,
 })
 
-const gym1 = new Gym({
+const gym1 = new Gyms({
     name: 'Crunch Fitness',
-    city: 'Atlanta',
-    Hours: 247,
 })
 
 
@@ -39,13 +36,10 @@ const tony = new User({
 
 const grape = new Food({
     name: 'Grape',
-    calories: 65,
 })
 
 const gym2 = new Gym({
     name: 'Golds gym',
-    city: 'Atlanta',
-    Hours: 247,
 })
 
 
@@ -55,13 +49,10 @@ const ashley = new User({
 
 const orange = new Food({
     name: 'Fruit:Orange',
-    calories: 55,
 })
 
 const gym3 = new Gym({
     name: 'Gym:LA Fitness',
-    city: 'City:Atlanta',
-    Hours: 247,
 })
 
         

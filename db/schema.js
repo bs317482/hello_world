@@ -1,22 +1,45 @@
+// const mongoose = require('mongoose')
+// const Schema = mongoose.Schema
+
+// const GymSchema = new Schema({
+//     name: String,
+// })
+
+// const FoodSchema = new Schema({
+//     name: String,
+//     location: String,
+// })
+
+// const UserSchema = new Schema({
+//     name: String,
+// })
+
+// module.exports = {
+//     UserSchema,
+//     FoodSchema,
+//     GymSchema
+// }
+
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-var foodSchema = new Schema({
+const GymsSchema = new Schema({
     name: String,
-    calories: Number,
 })
 
-    var gymSchema = new Schema({
-        name: String,
-        city: String,
-        Hours: Number,
-        })
-
-const userSchema = new Schema({
+const FoodsSchema = new Schema({
     name: String,
-    food: [foodSchema],
-    gym: [gymSchema],
-    })
-    
+    gyms: [GymsSchema]
+})
 
-    module.exports = {userSchema, gymSchema, foodSchema}
+const UserSchema = new Schema({
+    name: String,
+    age: String,
+    foods: [FoodsSchema]
+})
+
+module.exports = {
+    UserSchema,
+    FoodsSchema,
+    GymsSchema
+}

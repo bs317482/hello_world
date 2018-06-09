@@ -1,0 +1,18 @@
+<h3 class="add-new-user">Add New User</h3>
+
+
+<form class="container" action="/users" method="POST">
+    <div>
+        <label for="name">Your Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="age">Your Age</label>
+        <input type="text" name="age">
+    </div>
+    <div>
+        <label for="foods">food</label>
+        <input type="text" name="food" value="{{users.food}}">
+    </div>
+    <button class="add-user btn white" type="submit" name="action">Create</button>
+</form>

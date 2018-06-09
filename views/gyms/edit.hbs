@@ -1,0 +1,14 @@
+<h3> Edit {{gym.name}}</h3>
+
+<form action="/users/{{userId}}/foods/{{foodId}}/food/{{gymsId}}?_method=PUT" method="POST">
+    <div>
+        <label for="name">gym Name</label>
+        <input type="text" name="name" value="{{gym.name}}">
+    </div>
+    <button class="btn" type="submit"> Update gym</button>
+    <br>
+</form>
+
+<button class="white">
+    <a href="/users/{{userId}}/foods/{{foodId}}/gyms/{{gymsId}}">cancel</a>
+</button>

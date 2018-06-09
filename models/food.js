@@ -1,6 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = require('../db/schema')
-var Food = mongoose.model('Food',Schema.foodSchema)
+const Schema = require('../db/schema')
+const mongoose = require('mongoose')
 
-
-    module.exports = Food
+const foodModel = mongoose.model('Food', Schema.FoodsSchema)
+module.exports = foodModel
